@@ -69,7 +69,9 @@ def get_embedding_matrix(char2vec, n_vocab, n_embed, char2index):
 
 def get_X_data(char_data, char2index, max_length):
     index_data = []
+    # l is the key in char_data
     for l in char_data:
+        # index_data append every character's vector
         index_data.append([char2index[s] if char2index.get(s) is not None else 0
                            for s in l])
     index_array = pad_sequences(index_data, maxlen=max_length, dtype='int32',

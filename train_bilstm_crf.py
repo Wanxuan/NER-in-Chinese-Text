@@ -24,7 +24,7 @@ ner_model = BiLSTM_CRF(n_input=200, n_vocab=char_embedding_mat.shape[0],
                        n_entity=7, optimizer='adam', batch_size=16, epochs=500)
 
 cp_folder, cp_file = 'checkpoints', 'bilstm_crf_weights_best.hdf5'
-log_filepath = '/home/purvar/Downloads/Model_result/NER/logs/bilstm_crf_summaries'
+log_filepath = '/home/wanxuanl/NER-in-Chinese-Text/logs/bilstm_crf_summaries'
 
 cb = [ModelCheckpoint(os.path.join(cp_folder, cp_file), monitor='val_loss',
                       verbose=1, save_best_only=True, save_weights_only=True, mode='min'),

@@ -30,7 +30,7 @@ def get_word2object():
         if i == 0:
             n_word = int(tep_list[0])
             n_embed = int(tep_list[1])
-        elif ord(tep_list[0][0]) > 122:
+        elif ord(tep_list[0]) > 122:
             word = tep_list[0]
             vec = np.asarray(tep_list[1:], dtype='float32')
             word2vec[word] = vec

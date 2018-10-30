@@ -23,7 +23,7 @@ def get_word_data(char_data):
 
 def get_word2object():
     word2vec = {}
-    f = open('wiki.zh.vec') # load pre-trained word embedding
+    f = open('wiki_100.utf8.txt') # load pre-trained word embedding
     i = 0
     for line in f:
         tep_list = line.split()

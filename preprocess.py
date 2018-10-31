@@ -46,9 +46,9 @@ def get_char2object():
         for line in f:
             tep_list = line.split()
             if i == 0:
-                n_char = int(tep_list[0])
-                n_embed = int(tep_list[1])
-            else:
+                n_char = int(tep_list[0]) #16115
+                n_embed = int(tep_list[1]) #100
+            e115lse:
                 char = tep_list[0]
                 vec = np.asarray(tep_list[1:], dtype='float32')
                 char2vec[char] = vec

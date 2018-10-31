@@ -41,19 +41,18 @@ def get_char_tag_data(file_path):
 
 def get_char2object():
     char2vec = {}
-    f = open('wiki_100.utf8.txt') # load pre-trained word embedding
-    i = 0
-    for line in f:
-        tep_list = line.split()
-        if i == 0:
-            n_char = int(tep_list[0])
-            n_embed = int(tep_list[1])
-        else:
-            char = tep_list[0]
-            vec = np.asarray(tep_list[1:], dtype='float32')
-            char2vec[char] = vec
-        i += 1
-    f.close()
+    with open('wiki_100.utf8.txt') as f: # load pre-trained word embedding
+        i = 0
+        for line in f:
+            tep_list = line.split()
+            if i == 0:
+                n_char = int(tep_list[0])
+                n_embed = int(tep_list[1])
+            else:
+                char = tep_list[0]
+                vec = np.asarray(tep_list[1:], dtype='float32')
+                char2vec[char] = vec
+            i += 1
     char2index = {k: i for i, k in enumerate(sorted(char2vec.keys()), 1)}
     return char2vec, n_char, n_embed, char2index
 

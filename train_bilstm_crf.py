@@ -30,7 +30,7 @@ cb = [ModelCheckpoint(os.path.join(cp_folder, cp_file), monitor='val_loss',
                       verbose=1, save_best_only=True, save_weights_only=True, mode='min'),
       EarlyStopping(min_delta=1e-8, patience=10, mode='min'),
       ReduceLROnPlateau(factor=0.2, patience=6, verbose=0, mode='min',
-                        epsilon=1e-6, cooldown=4, min_lr=1e-8),
+                        min_delta=1e-6, cooldown=4, min_lr=1e-8),
       TensorBoard(log_dir=log_filepath, write_graph=True, write_images=True,
                   histogram_freq=1)]
 
